@@ -75,3 +75,149 @@ full_sorted = sorted(full, reverse=True)
 
 # Print out full_sorted
 print(full_sorted)
+############################################################################################################################################
+String Methods
+Strings come with a bunch of methods. Follow the instructions closely to discover some of them. If you want to discover them in more detail, you can always type help(str) in the IPython Shell.
+
+A string place has already been created for you to experiment with.
+
+Instructions
+100 XP
+Use the .upper() method on place and store the result in place_up. Use the syntax for calling methods that you learned in the previous video.
+Print out place and place_up. Did both change?
+Print out the number of o's on the variable place by calling .count() on place and passing the letter 'o' as an input to the method. We're talking about the variable place, not the word "place"!
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+# string to experiment with: place
+place = "poolhouse"
+
+# Use upper() on place
+place_up = place.upper()
+
+# Print out place and place_up
+print(place)
+print(place_up)
+
+
+# Print out the number of o's in place
+print(place.count('o'))
+############################################################################################################################################
+List Methods
+Strings are not the only Python types that have methods associated with them. Lists, floats, integers and booleans are also types that come packaged with a bunch of useful methods. In this exercise, you'll be experimenting with:
+
+.index(), to get the index of the first element of a list that matches its input and
+.count(), to get the number of times an element appears in a list.
+You'll be working on the list with the area of different parts of a house: areas.
+
+Instructions
+100 XP
+Use the .index() method to get the index of the element in areas that is equal to 20.0. Print out this index.
+Call .count() on areas to find out how many times 9.50 appears in the list. Again, simply print out this number.
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Print out the index of the element 20.0
+print(areas.index(20.0))
+
+# Print out how often 9.50 appears in areas
+print(areas.count(9.50))
+############################################################################################################################################
+List Methods (2)
+Most list methods will change the list they're called on. Examples are:
+
+.append(), that adds an element to the list it is called on,
+.remove(), that removes the first element of a list that matches the input, and
+.reverse(), that reverses the order of the elements in the list it is called on.
+You'll be working on the list with the area of different parts of the house: areas.
+
+Instructions
+100 XP
+Use .append() twice to add the size of the poolhouse and the garage again: 24.5 and 15.45, respectively. Make sure to add them in this order.
+Print out areas
+Use the .reverse() method to reverse the order of the elements in areas.
+Print out areas once more.
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+# Create list areas
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Use append twice to add poolhouse and garage size
+areas.append(24.5)
+areas.append(15.45)
+
+# Print out areas
+print(areas)
+
+# Reverse the orders of the elements in areas
+areas.reverse()
+
+# Print out areas
+print(areas)
+############################################################################################################################################
+Import package
+Let's say you wanted to calculate the circumference and area of a circle. Here's what those formulas look like:
+
+
+Rather than typing the number for pi, you can use the math package that contains the number
+
+For reference, ** is the symbol for exponentiation. For example 3**4 is 3 to the power of 4 and will give 81.
+
+Instructions
+100 XP
+Import the math package.
+Use math.pi to calculate the circumference of the circle and store it in C.
+Use math.pi to calculate the area of the circle and store it in A.
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+# Import the math package
+import math
+
+# Calculate C
+C = 2 * 0.43 * math.pi
+
+# Calculate A
+A = math.pi * 0.43 ** 2
+
+print("Circumference: " + str(C))
+print("Area: " + str(A))
+############################################################################################################################################
+Selective import
+General imports, like import math, make all functionality from the math package available to you. However, if you decide to only use a specific part of a package, you can always make your import more selective:
+
+from math import pi
+Try the same thing again, but this time only use pi.
+
+Instructions
+100 XP
+Perform a selective import from the math package where you only import the pi function.
+Use pi to calculate the circumference of the circle and store it in C.
+Use pi to calculate the area of the circle and store it in A.
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+# Import pi function of math package
+from math import pi
+
+# Calculate C
+C = 2 * 0.43 * pi
+
+# Calculate A
+A = pi * 0.43 ** 2
+
+print("Circumference: " + str(C))
+print("Area: " + str(A))
+############################################################################################################################################
+Different ways of importing
+There are several ways to import packages and modules into Python. Depending on the import call, you'll have to use different Python code.
+
+Suppose you want to use the function inv(), which is in the linalg subpackage of the scipy package. You want to be able to use this function as follows:
+
+my_inv([[1,2], [3,4]])
+Which import statement will you need in order to run the above code without an error?
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+from scipy.linalg import inv as my_inv
+##################################################################################################################################################################################################################################################################
+
+###ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER######ANSWER###
+
+
+
+
+
+
