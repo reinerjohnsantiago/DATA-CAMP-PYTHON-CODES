@@ -1,0 +1,284 @@
+##################################################################################################################################################################
+Equality
+To check if two Python values, or variables, are equal you can use ==. To check for inequality, you need !=. As a refresher, have a look at the following examples that all result in True. Feel free to try them out.
+
+2 == (1 + 1)
+"intermediate" != "python"
+True != False
+"Python" != "python"
+When you write these comparisons in a script, you will need to wrap a print() function around them to see the output.
+
+Instructions
+100 XP
+Write code to see if True equals False.
+Write Python code to check if -5 * 15 is not equal to 75.
+Ask Python whether the strings "pyscript" and "PyScript" are equal.
+What happens if you compare booleans and integers? Write code to see if True and 1 are equal.
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+# Comparison of booleans
+print(True != False)
+# Comparison of integers
+print(-5*15 == 75)
+
+# Comparison of strings
+print("pyscript" !="PyScript")
+
+# Compare a boolean with an integer
+print(True == 1)
+
+##################################################################################################################################################################
+Greater and less than
+In the video, Hugo also talked about the less than and greater than signs, < and > in Python. You can combine them with an equals sign: <= and >=. Pay attention: <= is valid syntax, but =< is not.
+
+All Python expressions in the following code chunk evaluate to True:
+
+3 < 4
+3 <= 4
+"alpha" <= "beta"
+Remember that for string comparison, Python determines the relationship based on alphabetical order.
+
+Instructions
+100 XP
+Write Python expressions, wrapped in a print() function, to check whether:
+x is greater than or equal to -10. x has already been defined for you.
+"test" is less than or equal to y. y has already been defined for you.
+True is greater than False.
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+# Comparison of integers
+x = -3 * 6
+print(x >= -10)
+
+# Comparison of strings
+y = "test"
+print("test" <= y)
+
+# Comparison of booleans
+print(True > False)
+##################################################################################################################################################################
+Compare arrays
+Out of the box, you can also use comparison operators with NumPy arrays.
+
+Remember areas, the list of area measurements for different rooms in your house from Introduction to Python? This time there's two NumPy arrays: my_house and your_house. They both contain the areas for the kitchen, living room, bedroom and bathroom in the same order, so you can compare them.
+
+Instructions
+100 XP
+Using comparison operators, generate boolean arrays that answer the following questions:
+
+Which areas in my_house are greater than or equal to 18?
+You can also compare two NumPy arrays element-wise. Which areas in my_house are smaller than the ones in your_house?
+Make sure to wrap both commands in a print() statement so that you can inspect the output!
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+# Create arrays
+import numpy as np
+my_house = np.array([18.0, 20.0, 10.75, 9.50])
+your_house = np.array([14.0, 24.0, 14.25, 9.0])
+
+# my_house greater than or equal to 18
+print(my_house >= 18)
+
+# my_house less than your_house
+print(my_house <= your_house)
+##################################################################################################################################################################
+and, or, not (1)
+A boolean is either 1 or 0, True or False. With boolean operators such as and, or and not, you can combine these booleans to perform more advanced queries on your data.
+
+In the sample code, two variables are defined: my_kitchen and your_kitchen, representing areas.
+
+Instructions
+100 XP
+Write Python expressions, wrapped in a print() function, to check whether:
+my_kitchen is bigger than 10 and smaller than 18.
+my_kitchen is smaller than 14 or bigger than 17.
+double the area of my_kitchen is smaller than triple the area of your_kitchen.
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+# Define variables
+my_kitchen = 18.0
+your_kitchen = 14.0
+
+# my_kitchen bigger than 10 and smaller than 18?
+print(my_kitchen >10 and my_kitchen <18)
+
+# my_kitchen smaller than 14 or bigger than 17?
+print(my_kitchen < 14 or my_kitchen >17)
+
+# Double my_kitchen smaller than triple your_kitchen?
+print(my_kitchen*2 < your_kitchen *3)
+##################################################################################################################################################################
+and, or, not (2)
+To see if you completely understood the boolean operators, have a look at the following piece of Python code:
+
+x = 8
+y = 9
+not(not(x < 3) and not(y > 14 or y > 10))
+What will the result be if you execute these three commands?
+
+NB: Notice that not has a higher priority than and and or, it is executed first.
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+False
+##################################################################################################################################################################
+Boolean operators with NumPy
+Before, the operational operators like < and >= worked with NumPy arrays out of the box. Unfortunately, this is not true for the boolean operators and, or, and not.
+
+To use these operators with NumPy, you will need np.logical_and(), np.logical_or() and np.logical_not(). Here's an example on the my_house and your_house arrays from before to give you an idea:
+
+np.logical_and(my_house > 13, 
+               your_house < 15)
+Instructions
+100 XP
+Generate boolean arrays that answer the following questions:
+Which areas in my_house are greater than 18.5 or smaller than 10?
+Which areas are smaller than 11 in both my_house and your_house? Make sure to wrap both commands in print() statement, so that you can inspect the output.
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+# Create arrays
+import numpy as np
+my_house = np.array([18.0, 20.0, 10.75, 9.50])
+your_house = np.array([14.0, 24.0, 14.25, 9.0])
+
+# my_house greater than 18.5 or smaller than 10
+print(np.logical_or(my_house >18.5, my_house <10))
+
+# Both my_house and your_house smaller than 11
+print(np.logical_and(my_house <11, your_house<11))
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+##################################################################################################################################################################
+
+###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###ANSWER###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
